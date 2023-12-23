@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado da Busca</title>
+</head>
+<body>
+  <h1>Resultado da Busca</h1>
+
+  <% if (user) { %>
+    <p>Usuário Encontrado:</p>
+    <ul>
+      <li>Login: <%= user.login %></li>
+      <li>Nome: <%= user.nome %></li>
+      <li>Perfil: <%= user.perfil %></li>
+    </ul>
+
+    <!-- Adicione links/botões para alteração e exclusão -->
+    <a href="/alteracao/<%= user.id %>">Alterar</a>
+    <a href="/exclusao/<%= user.id %>">Excluir</a>
+    
+  <% } else { %>
+    <p>Nenhum usuário encontrado.</p>
+  <% } %>
+
+  <a href="/busca">Voltar à Busca</a>
+</body>
+</html>
